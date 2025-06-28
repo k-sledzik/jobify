@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  jobify-jobs:
+    build:
+      context: ./jobify-jobs
+      dockerfile: Dockerfile
+    container_name: jobify-jobs
+    hostname: jobify-jobs
+    ports:
+      - "8081:8081"
+    healthcheck:
+      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+networks:
+  jobify-network:
+    driver: bridge
+    name: jobify-network
