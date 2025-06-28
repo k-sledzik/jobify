@@ -2,7 +2,10 @@ module github.com/k-sledzik/jobify/jobify-jobs
 
 go 1.24.4
 
-require github.com/labstack/echo/v4 v4.13.4
+require (
+	github.com/k-sledzik/jobify/jobify-shared v0.0.0-20250628211819-c3b856007ea3
+	github.com/labstack/echo/v4 v4.13.4
+)
 
 require (
 	github.com/labstack/gommon v0.4.2 // indirect
