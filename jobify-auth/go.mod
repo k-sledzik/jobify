@@ -3,7 +3,7 @@ module github.com/k-sledzik/jobify/jobify-auth
 go 1.24.4
 
 require (
-	github.com/k-sledzik/jobify/jobify-shared v0.0.0-20250628211819-c3b856007ea3
+	github.com/k-sledzik/jobify/jobify-shared v0.0.0-20250628212536-749d21cf8214
 	github.com/labstack/echo/v4 v4.13.4
 )
 
@@ -17,5 +17,5 @@ require (
 	golang.org/x/net v0.41.0 // indirect
 	golang.org/x/sys v0.33.0 // indirect
 	golang.org/x/text v0.26.0 // indirect
-	golang.org/x/time v0.11.0 // indirect
+	golang.org/x/time v0.12.0 // indirect
 )

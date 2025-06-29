@@ -37,7 +37,7 @@ async function mergeStaticSpecs() {
         throw new Error(`Invalid service format: ${service}`);
       }
 
-      const serviceSpecResponse = await fetch(`http://localhost:${servicePort}${defaultServiceApiSpecRoute}`);
+      const serviceSpecResponse = await fetch(`http://${serviceName}:${servicePort}${defaultServiceApiSpecRoute}`);
 
       if (!serviceSpecResponse.ok) {
         throw new Error(`Failed to fetch API spec for service ${serviceName} on port ${servicePort}: ${serviceSpecResponse.statusText}`);
@@ -66,7 +66,7 @@ async function mergeStaticSpecs() {
       },
       servers: services.map(service => {
         const [serviceName, servicePort] = service.split(':');
-        return { url: `http://localhost:${servicePort}`, description: `${serviceName} Service` };
+        return { url: `http://${serviceName}:${servicePort}`, description: `${serviceName} Service` };
       }),
       paths: {},
       components: { schemas: {} },

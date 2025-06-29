@@ -42,7 +42,7 @@ func RegisterApiSpecRoute(e *echo.Echo, opts *ApiSpecOptions) {
 		}
 	}
 
-	apiSpecPath := fmt.Sprintf("../api-docs/jobify-%s_swagger.json", opts.ServiceName)
+	apiSpecPath := fmt.Sprintf("./jobify-%s_swagger.json", opts.ServiceName)
 
 	e.GET(ApiSpecHttpRoute, func(c echo.Context) error {
 		return serveApiSpecFile(c, apiSpecPath)
